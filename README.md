@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Valentine's Day Gift Website
+
+A special Valentine's Day website that transforms based on the date. Before Valentine's Day, it shows a cute "Will you be my Valentine?" prompt with a countdown. On Valentine's Day, it becomes a Twitter-like feed of memories.
+
+## Features
+
+- **Pre-Valentine's Day**:
+  - Interactive "Will you be my Valentine?" prompt
+  - Fun "No" button response
+  - Celebratory confetti animation on "Yes"
+  - Countdown timer to Valentine's Day
+
+- **Valentine's Day**:
+  - Memory feed with photos and captions
+  - Profile page with relationship statistics
+  - Clean, modern UI with a Valentine's theme
+
+## Tech Stack
+
+- Next.js 14 with App Router
+- TypeScript
+- Tailwind CSS
+- React Confetti
+- date-fns
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js app router pages
+├── components/            # React components
+├── data/                  # Mock data
+├── types/                 # TypeScript types
+└── utils/                 # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Customization
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Update the Valentine's Day date in `src/data/mockData.ts`
+2. Add your own memories and photos in the `posts` array
+3. Update relationship stats in `relationshipStats` object
+4. Customize colors in `tailwind.config.ts`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment
 
-## Learn More
+The project is ready to be deployed on Vercel:
 
-To learn more about Next.js, take a look at the following resources:
+1. Push to GitHub
+2. Import to Vercel
+3. Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design Decisions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Used a dark theme with red accents for a romantic atmosphere
+- Implemented responsive design for all screen sizes
+- Added smooth transitions and animations for better UX
+- Kept the UI minimal and focused on the content
+- Used TypeScript for better type safety and development experience
 
-## Deploy on Vercel
+## Future Enhancements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Add more interactive elements to the memory feed
+- Implement image optimization and lazy loading
+- Add more relationship statistics and visualizations
+- Include background music option
+- Add more animations and transitions
