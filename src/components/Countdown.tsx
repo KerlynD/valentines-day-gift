@@ -8,11 +8,14 @@ export const Countdown: FC = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (isValentinesDay()) {
+      const newTimeLeft = getTimeUntilValentinesDay();
+      setTimeLeft(newTimeLeft);
+
+      // Only redirect if it's actually Valentine's Day
+      if (isValentinesDay() && !localStorage.getItem('valentine_auth')) {
+        clearInterval(timer);
         router.push('/feed');
-        return;
       }
-      setTimeLeft(getTimeUntilValentinesDay());
     }, 1000);
 
     return () => clearInterval(timer);
