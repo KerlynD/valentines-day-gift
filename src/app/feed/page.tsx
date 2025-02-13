@@ -31,10 +31,11 @@ export default function FeedPage() {
 
   useEffect(() => {
     const auth = localStorage.getItem('valentine_auth');
-    // Only allow access if authenticated through password or if it's Valentine's Day
-    if (!auth && !isValentinesDay()) {
+    const isVDay = isValentinesDay();
+    
+    // Only allow access if it's Valentine's Day OR they have the password
+    if (!isVDay && !auth) {
       router.push('/');
-      return;
     }
   }, [router]);
 

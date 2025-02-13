@@ -90,5 +90,5 @@ export const relationshipStats: RelationshipStats = {
   dateStarted: '2023-10-15'
 };
 
-// The date when the feed becomes accessible
-export const VALENTINES_DAY = '2024-02-14T00:00:00'; 
+// The date when the feed becomes accessible (interpreted as local time now)
+export const VALENTINES_DAY = '2024-02-14T00:00:00.000'; 

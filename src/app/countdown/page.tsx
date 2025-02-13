@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Countdown } from '@/components/Countdown';
 import Image from 'next/image';
+import { isValentinesDay } from '@/utils/dateUtils';  // Add this import
+
 
 // Heart component for floating animation
 const FloatingHeart = ({ className = '' }: { className?: string }) => (
@@ -24,9 +26,10 @@ export default function CountdownPage() {
   const router = useRouter();
 
   useEffect(() => {
-    // Check if user came from password protection
+    // Check if user came from password protection AND it's Valentine's Day
     const auth = localStorage.getItem('valentine_auth');
-    if (auth === 'true') {
+    const isVDay = isValentinesDay();
+    if (auth === 'true' && isVDay) {
       router.push('/feed');
     }
   }, [router]);

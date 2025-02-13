@@ -37,7 +37,7 @@ export default function Home() {
     setShowConfetti(true);
     setTimeout(() => {
       router.push('/countdown');
-    }, 2000);
+    }, 4000);
   };
 
   const handlePasswordSuccess = () => {
@@ -61,9 +61,12 @@ export default function Home() {
         <ReactConfetti
           width={window.innerWidth}
           height={window.innerHeight}
-          recycle={false}
-          numberOfPieces={200}
-          colors={['#DC2626', '#FFFFFF', '#991B1B']}
+          recycle={true}
+          numberOfPieces={500}
+          gravity={0.2}
+          initialVelocityY={20}
+          colors={['#DC2626', '#FFFFFF', '#991B1B', '#FFC0CB', '#FF69B4']}
+          tweenDuration={4000}
         />
       )}
 

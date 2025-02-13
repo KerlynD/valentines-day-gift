@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, useEffect, useState } from 'react';
 import { getTimeUntilValentinesDay, isValentinesDay } from '@/utils/dateUtils';
 import { useRouter } from 'next/navigation';
@@ -7,14 +9,24 @@ export const Countdown: FC = () => {
   const router = useRouter();
 
   useEffect(() => {
+    // Immediate update
+    setTimeLeft(getTimeUntilValentinesDay());
+
     const timer = setInterval(() => {
       const newTimeLeft = getTimeUntilValentinesDay();
       setTimeLeft(newTimeLeft);
 
-      // Only redirect if it's actually Valentine's Day
-      if (isValentinesDay() && !localStorage.getItem('valentine_auth')) {
-        clearInterval(timer);
-        router.push('/feed');
+      // When countdown reaches zero, redirect
+      if (
+        newTimeLeft.days === 0 &&
+        newTimeLeft.hours === 0 &&
+        newTimeLeft.minutes === 0 &&
+        newTimeLeft.seconds === 0
+      ) {
+        if (isValentinesDay()) {
+          clearInterval(timer);
+          router.push('/feed');
+        }
       }
     }, 1000);
 
