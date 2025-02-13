@@ -44,8 +44,8 @@ export default function CountdownPage() {
       <div className="flex flex-col items-center space-y-12 max-w-2xl mx-auto text-center">
         <Countdown />
         <p className="text-valentine-light text-lg md:text-xl px-4">
-          I love you baby, Happy Valentine's Day. I've got something
-          big coming soon for you right here. Valentine's Day is the day.
+          I love you baby, Happy Valentine&apos;s Day. I&apos;ve got something
+          big coming soon for you right here. Valentine&apos;s Day is the day.
         </p>
       </div>
     </main>
